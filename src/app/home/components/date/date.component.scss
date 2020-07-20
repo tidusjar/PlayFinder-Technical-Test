@@ -1,0 +1,32 @@
+input[type=date] {
+    width: 100%;
+
+    margin-bottom: 1rem;
+    padding: 8.75px 10px;
+    border: .2rem solid #c2c2c2;
+    border-radius: .6rem;
+
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+}
+
+.c-dates {
+    overflow: hidden;
+}
+
+.t-validation {
+    display: none;
+    color: #c00;
+    padding-bottom: 1rem;
+}
+
+.invalid {
+    .t-validation {
+        display: inline-block !important;
+    }
+
+    input[type=date] {
+        border: .2rem solid #c2c2c2 !important;
+    }
+}

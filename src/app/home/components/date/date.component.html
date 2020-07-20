@@ -1,0 +1,7 @@
+<div class="c-date" [class.invalid]="!control?.valid && form?.submitted">
+    <input type="date" autocomplete="no_autocomplete_hack" [placeholder]="placeholder" [(ngModel)]="input" (change)="setValue()" (keyup)="setValue()" />
+
+    <label class="t-validation">
+        {{ validationErrorMessage || 'Required' }}
+    </label>
+</div>

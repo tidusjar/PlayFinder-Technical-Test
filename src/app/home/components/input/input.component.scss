@@ -1,0 +1,24 @@
+input[type=text] {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.c-input {
+    overflow: hidden;
+}
+
+.t-validation {
+    display: none;
+    color: #c00;
+    padding-bottom: 1rem;
+}
+
+.invalid {
+    .t-validation {
+        display: inline-block !important;
+    }
+
+    input[type=text] {
+        border: .2rem solid #c2c2c2 !important;
+    }
+}

@@ -1,0 +1,31 @@
+<section class="c-search">
+    <form #sForm="ngForm" [formGroup]="homeService.searchForm" (ngSubmit)="homeService.onSearchSubmit(sForm)">
+        <div class="row">
+            <div class="column">
+                <app-input formControlName="pitchId" [control]="homeService.searchForm?.controls?.pitchId" [form]="sForm"></app-input>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <app-date formControlName="startDate" [control]="homeService.searchForm?.controls?.startDate" [form]="sForm"></app-date>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <app-date formControlName="endDate" [control]="homeService.searchForm?.controls?.endDate" [form]="sForm"></app-date>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                 <button type="submit" class="o-button--primary u-margin-right--10">Search</button>
+
+                 <button class="o-button--secondary" (click)="homeService.removeFromNGRX()">Clear</button>
+            </div>
+        </div>
+    </form>
+
+<!--    {{ homeService.searchForm?.value | json }}-->
+</section>

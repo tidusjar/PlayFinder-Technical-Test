@@ -1,0 +1,31 @@
+<div class="c-table">
+    <table>
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Start Time</td>
+            <td>Duration</td>
+            <td>Price: £</td>
+            <td>Price: €</td>
+            <td>Availabilities</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let play of pagedData">
+            <td>{{ play.id }}</td>
+            <td>{{ play.attributes?.starts | date: 'HH:MM DD/MM/YY' }}</td>
+            <td>{{ play.attributes?.starts | duration: play.attributes?.ends }}</td>
+            <td>{{ play.attributes?.price }}</td>
+            <td>{{ play.attributes?.price | euro }}</td>
+            <td>{{ play.attributes?.availabilities }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="c-table--paginator">
+        <a class="c-table--paginator-item" (click)="onPrevious()">&laquo;</a>
+        <a class="c-table--paginator-item">{{ pageNumber }}</a>
+        <a class="c-table--paginator-item" (click)="onNext()">&raquo;</a>
+    </div>
+</div>
